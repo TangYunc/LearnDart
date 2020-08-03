@@ -1,4 +1,5 @@
 main(List<String> args) {
+  //===========================Person部分================================
   // final p = Person();
   // p.name = "sas";
   // p.age = 156;
@@ -16,6 +17,12 @@ main(List<String> args) {
 
   final p2 = Person.formMap(info);
   p2.eating();
+
+  print(p);
+
+  //===========================Reactangle部分=============================
+  final r = Reactangle(2, 9);
+  print(r);
 }
 
 class Person {
@@ -47,5 +54,34 @@ class Person {
   }
   void eating() {
     print("${name}已经${age}岁啦，还能吃饭吗");
+  }
+
+  @override
+  String toString() {
+    // TODO: implement toString
+    return "name: $name, age:$age, height:$height";
+  }
+}
+
+class Reactangle {
+  double width;
+  double height;
+  double area;
+  String name;
+
+//语法糖的写法
+  // Reactangle(this.width, this.height) {
+  //   this.area = width * height;
+  // }
+
+//初始化列表
+  Reactangle(this.width, this.height)
+      : this.area = width * height,
+        name = "a";
+
+  @override
+  String toString() {
+    // TODO: implement toString
+    return "width: $width, height: $height, area: $area, name: $name";
   }
 }
